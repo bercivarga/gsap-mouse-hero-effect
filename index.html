@@ -7,7 +7,30 @@
     <title>Vite App</title>
   </head>
   <body>
-    <section class="flex items-center justify-center text-white bg-gray-900 w-screen h-screen">
+    <!-- Cursor effect -->
+    <div class="pointer-events-none w-24 h-24 flex items-center justify-center rounded-full overflow-hidden bg-purple-400 z-10 fixed" id="cursor">
+      <div class="w-full h-full relative flex items-center justify-center">
+        <span
+          class="text-5xl animate-spin"
+          style="animation-duration: 3s;"
+          id="cursor-icon"
+        >
+          ★
+        </span>
+        <div data-cursor-image="websites" class="opacity-0 absolute w-full h-full object-cover">
+          <img src="/images/flowers.jpg" alt="websites" />
+        </div>
+        <div data-cursor-image="apps" class="opacity-0 absolute w-full h-full object-cover">
+          <img src="/images/person-in-flowers.jpg" alt="apps" />
+        </div>
+        <div data-cursor-image="branding" class="opacity-0 absolute w-full h-full object-cover">
+          <img src="/images/winter.jpg" alt="branding" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero section -->
+    <section class="flex items-center justify-center p-4 text-white bg-gray-900 w-screen h-screen">
       <div class="max-w-7xl mx-auto">
         <span class="block">
           We make it happen
@@ -16,18 +39,29 @@
           class="block mt-2 text-6xl font-extrabold outline-1 text-gray-900 cursor-pointer"
           style="text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;"
         >
-            <span class="hover:text-white transition-colors">
+            <span
+              class="hover:text-white transition-colors"
+              data-cursor-image="websites"
+            >
              Websites
             </span>
-            <span class="hover:text-white transition-colors">
+            <span
+              class="hover:text-white transition-colors"
+              data-cursor-image="apps"
+            >
               Apps
             </span>
-            <span class="hover:text-white transition-colors">
+            <span
+              class="hover:text-white transition-colors"
+              data-cursor-image="branding"
+            >
               Branding
             </span>
         </div>
       </div>
     </section>
+    
+    <!-- Load global script -->
     <script type="module" src="/main.js"></script>
   </body>
 </html>
